@@ -29,3 +29,4 @@ for(let nome in nomes) {
     console.log(nome);          
 }
 // TEM DIFERENÇA ENTRE IN e OF = O OF VAI DAR O QUE ESTÁ ESCRITO NA VARIÁVEL E O IN vai dar o indices
+
