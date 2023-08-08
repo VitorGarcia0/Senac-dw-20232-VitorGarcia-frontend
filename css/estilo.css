@@ -1,8 +1,47 @@
-*{
+/*  *{ */
     /* height: 0;
     columns: 0;
     width: 0; */
-    padding: 10;
-    margin: 10;
+    /* padding: 10;
+    margin: 10; */
+/* }    */
+/*  MEXER COM O DISPLAY PARA ALINHAR A PÁGINA */
+/* Seletor wildcard (vale para todos) */
+/* display: flex e align itens */
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* body{
+    /* TODO */
+/* } */  
+
+/* Seletor por elementos encadeados */
+section+h1{
+    background-color: blue;
+}
+
+/* Seletor por classe */
+.formulario {
+    background-color: pink;
+}
+
+/* Seletor por id */
+#cep{
+    background-color: yellow;
+}
+
+[name]{
+    background-color: gray;    
+}
+
+/* Seletor por elemento (tag) */
+h1{
+    background-color: teal;
+}
+
+/* COR DOS CAMPOS DE TEXTO interno */
+input[type = "text"]{
+    background-color: royalblue;
 }
 

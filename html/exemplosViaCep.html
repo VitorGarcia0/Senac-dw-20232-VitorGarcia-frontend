@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- Cabeçalho -->
+        <!--Configurações, importações, scripts, bibliotecas externas, arquivo do css etc...  -->
+        <Title>Consulta de CEP</Title>
+        <script src="/js/consultarViaCep.js"></script>
+        <link rel="stylesheet" href= "/css/estilo.css">
+
+    </head>
+
+    <body>
+        <header>
+            <h1>Consultar um CEP!</h1>
+            <h2>Digite o CEP ali embaixo, seu tanso</h2>
+            <p>Colocar a descrição...</p>
+        </header>
+        <!-- Conteúdo -->
+        <div id='divDadosEndereco' style="font-size: 18px; background-color : rgb(207, 156, 14);">
+                <label> Informe um CEP: </label>
+                <!-- input type tem vários tipos de entradas(texto, número, tempo e cor) onblur(quando sair faz algo) -->
+                <input type="text" id="txtCep" onblur="buscarCEP()">
+
+                <br>
+                <label>Rua: </label>
+                <input type="text" id="txtRua" disabled>
+
+                <br> <!-- <br> Quebra a Linha  -->
+                <label>Bairro: </label>
+                <input type="text" id="txtBairro" disabled>
+
+                <br>
+                <label>Cidade: </label>
+                <input type="text" id="txtCidade" disabled>
+
+                <br>
+                <label>UF: </label>
+                <input type="text" id="txtUF" disabled>
+
+                <br>
+                <label>Rua: </label>
+                <input type="text" id="txtRua" disabled>
+
+        </div>
+    </body>
+
+</html>
