@@ -10,6 +10,9 @@
 /* display: flex e align itens */
 *{
     font-family: 'Courier New', Courier, monospace;
+    /* display: flex; */
+    align-items: baseline;
+    align-content: end;
 }
 
 /* body{
@@ -33,6 +36,7 @@ section+h1{
 
 [name]{
     background-color: gray;    
+    display: flex;
 }
 
 /* Seletor por elemento (tag) */
@@ -43,5 +47,7 @@ h1{
 /* COR DOS CAMPOS DE TEXTO interno */
 input[type = "text"]{
     background-color: royalblue;
-}
+    display: flex   ;
 
+
+}

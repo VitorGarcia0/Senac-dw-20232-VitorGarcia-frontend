@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Configurações, importações, scripts, etc...  -->
+    <Title>Consulta de Endereços</Title>
+    <script src="/js/consultarViaCep.js"></script>
+
+</head>
+
+<body>
+    <div style="font-size: 18px; background-color : rgb(89, 113, 192);">
+        <Label> Informe um CEP: </Label>
+        <!-- input type tem vários tipos de entradas(texto, número, tempo e cor) onblur(quando sair faz algo) -->
+        <input type="text" id="txtCep" onblur="buscarCEP()">
+
+        <br> <!-- <br> Quebra a Linha  -->
+        <label>Bairro: </label>
+        <input type="text" id="txtBairro" disabled>
+
+        <br>
+        <label>Cidade: </label>
+        <input type="text" id="txtCidade" disabled>
+
+        <br>
+        <label>UF: </label>
+        <input type="text" id="txtUF" disabled>
+
+    </div>
+</body>
+
+</html>
