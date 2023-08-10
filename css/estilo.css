@@ -10,17 +10,32 @@
 /* display: flex e align itens */
 *{
     font-family: 'Courier New', Courier, monospace;
-    /* display: flex; */
+    /* display: flex;  */
     align-items: baseline;
     align-content: end;
+    
 }
 
-/* body{
+ body{
     /* TODO */
-/* } */  
+    display: flex;
+    flex: auto;
+ }  
+ 
+ header{
+    /* VH = ViewPort-height */
+    height: 10vh;
+    width: 100%;
+ }
+
+ main{
+    height: 90%;
+    width: 100%;
+ }
 
 /* Seletor por elementos encadeados */
-section+h1{
+/* No html fica H1 depois a section */
+section+h1{   
     background-color: blue;
 }
 
@@ -41,7 +56,7 @@ section+h1{
 
 /* Seletor por elemento (tag) */
 h1{
-    background-color: teal;
+    background-color: rgb(149, 226, 175);
 }
 
 /* COR DOS CAMPOS DE TEXTO interno */
@@ -49,5 +64,21 @@ input[type = "text"]{
     background-color: royalblue;
     display: flex   ;
 
-
 }
+
+.formulario{
+    /* propriedade !importante */
+    background-color: pink;
+    color: green;
+}
+
+/* Seletor por classe */
+.texto-destaque{
+    font-weight: bold;
+    font-style: italic;
+    color: fuchsia;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
+}
+/* div{estilo que eu quero  } */
+/* qualquer class é .nome da class */
+/* Por id  #nome */
