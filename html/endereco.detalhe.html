@@ -25,11 +25,11 @@
                         <fieldset class="formulario__fieldset" id="fieldset-consulta-cep">
                             <legend>Consulta de CEP</legend>
                             <div>
-                                <label class="formulario__texto" for="cep">Informe o CEP: </label>
+                                <label class="formulario__texto_cep" for="cep">Informe o CEP: </label>
                                 <input class="formulario__fieldset__input__descricao" type="text" id="cep" name="cep" minlength="8" required/>
                             </div>
                             <div>
-                                <label class="formulario__texto"></label>
+                                <label class="formulario__texto_cep"></label>
                                 <button class="formulario__fieldset__botao" type="button" onclick="buscarCEP()">Buscar CEP</button>    
                             </div>
                         </fieldset>
@@ -38,37 +38,38 @@
                         <fieldset class="formulario__fieldset">
                             <legend>Endereço:</legend>
                             <div>
-                                <label class="formulario__texto" for="rua">Rua:</label>
+                                <label class="formulario__texto__endereco" for="rua">Rua:</label>
                                 <input class="formulario__fieldset__input__descricao" type="text" id="rua" name="rua" minlength="3" required/>    
                             </div>
 
                             <div>
-                                <label class="formulario__texto" for="bairro">Bairro:</label>
+                                <label class="formulario__texto__endereco" for="bairro">Bairro:</label>
                                 <input class="formulario__fieldset__input__descricao" type="text" id="bairro" name="bairro" required/>    
                             </div>
         
                             <div>
-                                <label class="formulario__texto" for="cidade">Cidade:</label>
+                                <label class="formulario__texto__endereco" for="cidade">Cidade:</label>
                                 <input class="formulario__fieldset__input__descricao" type="text" id="cidade" name="cidade" required/>    
                             </div>
 
                             <div>
-                                <label class="formulario__texto" for="estado">Estado:</label>
+                                <label class="formulario__texto__endereco" for="estado">Estado:</label>
                                 <input class="formulario__fieldset__input__descricao" type="text" id="estado" name="estado" required/>    
                             </div>
 
                             <div>
-                                <label class="formulario__texto" for="estado">Número:</label>
+                                <label class="formulario__texto__endereco" for="estado">Número:</label>
                                 <input class="formulario__fieldset__input__descricao" type="text" id="numero" name="numero" required/>    
                             </div>
                             <div>
-                                <label class="formulario__texto"></label>
+                                <label class="formulario__texto__endereco"></label>
                                 <input class="formulario__fieldset__botao" id="botao" type="submit" value="Cadastrar"/>  
                             </div>
                         </fieldset>
                     </div>                    
                 </form> 
             </section>
+            
         </main>
         <footer class=" ape">
             <p class="rodape__texto">Desenvolvido por Vitor Garcia de Vasconcelos</p>
