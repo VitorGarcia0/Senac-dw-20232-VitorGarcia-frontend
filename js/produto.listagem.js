@@ -1,4 +1,7 @@
 async function buscarTodosProdutos(){
+        // FUNÇÃO BUSCAR, ALTERAR A URL PRA /FILTROS
+    // ALTERAR O FETCH PARA FAZER O POST, exemplo
+    // PASSAR NO BODY OS SELETORES
     fetch('http://localhost:8080/api/produtos')
     .then(resultado => resultado.json())
     .then(json => {  // aerial function
