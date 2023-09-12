@@ -4,15 +4,39 @@
         <title>Listagem de Produtos</title>
         
         <!-- Importações de scripts JS, bibliotecas externas, arquivos CSS... -->
-        <script src="./js/produto.listagem.js"></script>
-        <link rel="stylesheet" href="../../css/estilos.css">
+        <script src="../js/produto.listagem.js"></script>
+        <!-- <link rel="stylesheet" href="css/estiloProduto.css"> -->
     </head>
     <body>
         <header class="cabecalho">
             <h1 class="cabecalho__titulo">Consulta de Produtos</h1>
+
         </header>
         <main class="principal">
             <section class="section__principal">
+                <div>
+                    <label class= "formulario_nome" for='nome'> Informe o Nome: </label>
+                    <input class="formulario_nome" type="text" id="nome" name="nome" />
+                </div>
+
+                <div>
+                    <label class= "formulario_fabricante" for='fabricante'> Informe o Fabricante: </label>
+                    <input class="formulario_cpf" type="text" id="fabricante" name="fabricante" />
+                </div>
+
+                <div>
+                    <label class= "formulario_valor" for='valor'> Informe o Valor: </label>
+                    <input class="formulario_valor" type="text" id="valor" name="valor" />
+                </div>
+
+                <div>
+                    <label class= "formulario_peso" for='peso'> Informe o Peso: </label>
+                    <input class="formulario_peso" type="text" id="peso" name="peso" />
+                </div>
+
+                <div>
+                    <button class="formulario_botao" type="button" onclick="buscarTodosProdutos()"> Buscar produtosY</button>
+                </div>
                 <table>
                     <thead>
                         <th>#</th>
