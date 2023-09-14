@@ -1,16 +1,38 @@
-async function buscarTodosProdutos(){
-        // FUNÇÃO BUSCAR, ALTERAR A URL PRA /FILTROS
+async function buscarTodosProdutos() {
+    // FUNÇÃO BUSCAR, ALTERAR A URL PRA /FILTROS
     // ALTERAR O FETCH PARA FAZER O POST, exemplo
     // PASSAR NO BODY OS SELETORES
-    fetch('http://localhost:8080/api/produtos/filtros', { method: "POST"})
-    headers: {"Content-type": "application/json"}
-    .then(resultado => resultado.json())
-    .then(json => {  // aerial function
-        preencherTabela(json);
-    });
+    fetch('http://localhost:8080/api/produtos')
+        .then(resultado => resultado.json())
+        .then(json => {  // aerial function
+            preencherTabela(json);
+        });
 }
 
-function preencherTabela(jsonProdutos){
+async function pesquisar() {
+    //POST: localhost:8080/api/produtos/filtros
+    // PARAMETROS: produtoSeletor no formato JSON
+    let options = {
+        method: "POST",
+        headers: { 'Content-type': "application/json" },
+        body: JSON.stringify({
+            valorMinimo: document.getElementById("valorMinimo").value,
+            valorMaximo: document.getElementById("valorMaximo").value
+        })
+    };
+    const pesquisaFiltros = await fetch('localhost:8080/api/produtos/filtros', options);
+    const resultadoFiltros = await pesquisaFiltros.json();
+
+    preencherTabela(resultadoFiltros);
+
+}
+
+function limparTabela() {
+    document.getElementById("corpoTabela").innerHTML = ""; 
+}
+
+function preencherTabela(jsonProdutos) {
+    this.limparTabela();
     //  <tr>
     //      <td>1</td>
     //      <td>Café</td>
@@ -20,7 +42,7 @@ function preencherTabela(jsonProdutos){
     //  </tr>
     var dadosTabelaProdutos = document.getElementById('corpoTabela');
 
-    for(let i = 0; i < jsonProdutos.length; i++){
+    for (let i = 0; i < jsonProdutos.length; i++) {
         let novaLinha = dadosTabelaProdutos.insertRow();
 
         let celulaId = novaLinha.insertCell();
@@ -39,5 +61,6 @@ function preencherTabela(jsonProdutos){
         celulaPeso.innerText = jsonProdutos[i].peso;
     }
 }
+
 
 buscarTodosProdutos();

@@ -1,55 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <title>Listagem de Produtos</title>
-        
-        <!-- Importações de scripts JS, bibliotecas externas, arquivos CSS... -->
-        <script src="../js/produto.listagem.js"></script>
-        <!-- <link rel="stylesheet" href="css/estiloProduto.css"> -->
-    </head>
-    <body>
-        <header class="cabecalho">
-            <h1 class="cabecalho__titulo">Consulta de Produtos</h1>
 
-        </header>
-        <main class="principal">
-            <section class="section__principal">
+<head>
+    <title>Listagem de Produtos</title>
+
+    <!-- Importações de scripts JS, bibliotecas externas, arquivos CSS... -->
+    <script src="../js/produto.listagem.js"></script>
+    <link rel="stylesheet" href="../css/estiloProduto.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1 class="cabecalho__titulo">Consulta de Produtos</h1>
+
+    </header>
+    <main class="principal">
+        <section class="section__principal">
+            <form class="formulario" id="formulario">
                 <div>
-                    <label class= "formulario_nome" for='nome'> Informe o Nome: </label>
-                    <input class="formulario_nome" type="text" id="nome" name="nome" />
+                    <label class="formulario__texto" for='nome'> Nome: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="nome" name="nome" />
                 </div>
 
                 <div>
-                    <label class= "formulario_fabricante" for='fabricante'> Informe o Fabricante: </label>
-                    <input class="formulario_cpf" type="text" id="fabricante" name="fabricante" />
+                    <label class="formulario__texto" for='fabricante'> Fabricante: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="fabricante"
+                        name="fabricante" />
+                </div>
+                <!-- Parte de valor minimo e maximo -->
+                <div>
+                    <label class="formulario__texto" for='valorMinimo'> Valor mínimo (R$): </label>
+                    <input class="formulario__fieldset__input__descricao" type="number" id="valorMinimo"
+                        name="valorMinimo" />
                 </div>
 
                 <div>
-                    <label class= "formulario_valor" for='valor'> Informe o Valor: </label>
-                    <input class="formulario_valor" type="text" id="valor" name="valor" />
+                    <label class="formulario__texto" for='valorMaximo'> Valor máximo (R$): </label>
+                    <input class="formulario__fieldset__input__descricao" type="number" id="valorMaximo"
+                        name="valorMaximo" />
+                </div>
+                <!-- Peso minimo e maximo-->
+                <div>
+                    <label class="formulario__texto" for='pesoMinimo'> Peso mínimo: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="pesoMinimo"
+                        name="pesoMinimo" />
                 </div>
 
                 <div>
-                    <label class= "formulario_peso" for='peso'> Informe o Peso: </label>
-                    <input class="formulario_peso" type="text" id="peso" name="peso" />
+                    <label class="formulario__texto" for='pesoMaximo'> Peso máximo: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="pesoMaximo"
+                        name="pesoMaximo" />
                 </div>
 
                 <div>
-                    <button class="formulario_botao" type="button" onclick="buscarTodosProdutos()"> Buscar produtosY</button>
+                    <label class="formulario__texto" for='cnpj'> Cnpj: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="cnpj" name="cnpj" />
                 </div>
-                <table>
-                    <thead>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Fabricante</th>
-                        <th>Valor (R$)</th>
-                        <th>Peso (kg)</th>
-                    </thead>
-                    <tbody id="corpoTabela">
-                        
-                    </tbody>
-                </table>
-            </section>
-        </main>
-    </body>
+
+                <div>
+                    <label class="formulario__texto"> </label>
+                    <input class="formulario__fieldset__botao" , id="botaoPesquisar" , type="button" , value="Pesquisar"
+                        onclick="pesquisar()" />
+
+                </div>
+            </form>
+        </section>
+        <section class="section__principal ">
+            <table>
+                <thead>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Fabricante</th>
+                    <th>Valor (R$)</th>
+                    <th>Peso (kg)</th>
+                </thead>
+                <tbody id="corpoTabela">
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
 </html>
