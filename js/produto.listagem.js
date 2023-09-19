@@ -18,6 +18,15 @@ async function pesquisar() {
         body: JSON.stringify({
             valorMinimo: document.getElementById("valorMinimo").value,
             valorMaximo: document.getElementById("valorMaximo").value
+    //           nome: document.getElementById("input-produto").value,
+    //   fabricante: document.getElementById("input-fabricante").value,
+    //   cnpjFabricante: document.getElementById("input-cnpj").value,
+    //   valorMinimo: document.getElementById("input-valor-min").value,
+    //   valorMaximo: document.getElementById("input-valor-max").value,
+    //   pesoMinimo: document.getElementById("input-peso-min").value,
+    //   pesoMaximo: document.getElementById("input-peso-max").value,
+    //   dataCadastroInicial: document.getElementById("input-data-inicio").value,
+    //   dataCadastroFinal: document.getElementById("input-data-fim").value,
         })
     };
     const pesquisaFiltros = await fetch('localhost:8080/api/produtos/filtros', options);

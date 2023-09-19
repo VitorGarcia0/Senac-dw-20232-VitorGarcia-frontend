@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Cadastro de Fabricante</title>
+
+    <!-- Importações de scripts JS, bibliotecas externas, arquivos CSS... -->
+    <script src="../js/fabricante.cadastro.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1 class="cabecalho__titulo">Cadastro de Fabricante</h1>
+
+    </header>
+    <main class="principal">
+        <section class="section__principal">
+            <form class="formulario" id="formulario">
+                <div>
+                    <label class="formulario__texto" for='nome'> Nome: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="nome" name="nome" required />
+                </div>
+
+                <div>
+                    <label class="formulario__texto" for='cnpj'> CNPJ: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="cnpj"
+                        name="cnpj" required />
+                </div>
+
+                <div>
+                    <label class="formulario__texto" for='cep'> CEP: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="cep"
+                        name="cep"  required onblur="buscarCep()"/>
+                </div>
+
+                <div>
+                    <label class="formulario__texto" for='cidade'> Cidade: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="cidade"
+                        name="cidade" disabled/>
+                </div>
+
+                <div>
+                    <label class="formulario__texto" for='pesoMinimo'> UF:</label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="uf"
+                        name="uf" disabled/>
+                </div>
+                
+                <div>
+                    <label class="formulario__texto"> </label>
+                    <input class="formulario__fieldset__botao" , id="botaoCadastrar" , type="button" , value="Cadastrar fabricante"
+                        onclick="CadastrarFabricante()" />
+
+                </div>
+            </form>
+        </section>
+        <!-- <section class="section__principal "> -->
+            <!-- <table>
+                <thead>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>Fabricante</th>
+                    <th>Valor (R$)</th>
+                    <th>Peso (kg)</th>
+                </thead>
+                <tbody id="corpoTabela">
+
+                </tbody>
+            </table>
+        </section> -->
+    </main>
+</body>
+
+</html>

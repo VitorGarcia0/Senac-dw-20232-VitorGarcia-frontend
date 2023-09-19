@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Listagem de Fabricante</title>
+
+    <!-- Importações de scripts JS, bibliotecas externas, arquivos CSS... -->
+    <script src="../js/fabricante.listagem.js"></script>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <h1 class="cabecalho__titulo">Listagem de Fabricantes</h1>
+
+    </header>
+    <main class="principal">
+        <section class="section__principal">
+            <form class="formulario" id="formulario">
+                <div>
+                    <label class="formulario__texto" for='nome'> Nome: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="nome" name="nome" />
+                </div>
+
+                <div>
+                    <label class="formulario__texto" for='cnpj'> Cnpj: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="cnpj"
+                        name="cnpj" />
+                </div>
+                
+                <div>
+                    <label class="formulario__texto" for='cep'> CEP </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="cep"
+                        name="cep" />
+                </div>
+
+                <div>
+                    <label class="formulario__texto" for='cidade'> Cidade:  </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="cidade"
+                        name="cidade" />
+                </div>
+
+                <div>
+                    <label class="formulario__texto" for='uf'> UF: </label>
+                    <input class="formulario__fieldset__input__descricao" type="text" id="uf"
+                        name="uf" />
+                </div>
+
+                <div>
+                    <label class="formulario__texto"> </label>
+                    <input class="formulario__fieldset__botao" , id="botaoPesquisar" , type="button" , value="Pesquisar Todos"
+                        onclick="buscarTodosFabricantes()" />
+
+                </div>
+                <div>
+                    <label class="formulario__texto"> </label>
+                    <input class="formulario__fieldset__botao" , id="botaoPesquisar" , type="button" , value="Limpar"
+                        onclick="limparTabela()" />
+
+                </div>
+            </form>
+        <section class="section__principal ">
+        </section>
+            <table>
+                <thead>
+                    <th>#</th>
+                    <th>Nome</th>
+                    <th>CNPJ</th>
+                    <th>Cep</th>
+                    <th>Cidade</th>
+                    <th>UF</th>
+                </thead>
+                <tbody id="corpoTabela">
+
+                </tbody>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>
