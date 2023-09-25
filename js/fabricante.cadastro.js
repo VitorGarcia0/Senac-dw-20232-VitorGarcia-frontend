@@ -2,16 +2,17 @@ async function cadastrarFabricante() {
    // buscarCEP();
     // fazer um post para cadastrar o Fabricante
     let options = {
+        nome: nome.value,
+        cnpj: cnpj.value,
+        cep: cep.value,
+        cidade: cidade.value,
+        uf: uf.value
+    };
+    fetch('http://localhost:8080/api/fabricante', {
         method: "POST",
-        headers: { 'Content-type': "application/json; charset=UTF-8" },
-        body: JSON.stringify({
-            nome: document.getElementById("nome").value,   //podia passar só nome.value (pegar pelo id do label)
-            cnpj: document.getElementById("cnpj").value,
-            cep: document.getElementById("cep").value,
-            cidade: document.getElementById("cidade").value,
-            uf: document.getElementById("uf").value
-        })
-    }
+        body: JSON.stringify(options),
+        headers: {"Content-type": "application/json; charset=UTF-8"}
+    })
     .then(response => {
         if(response.status == 500){
             alert('Preencha todos os campos');
@@ -22,8 +23,7 @@ async function cadastrarFabricante() {
         alert("Fabricante salvo com sucesso");
         limparCampos();
     });
-   const registroFabricante = await fetch('localhost:8080/api/fabricante', options);
-   const registrarFabricante = await registroFabricante.json();
+   
 }
 // BUSCAR O CEP, com base no cep que o usuário digitou
 async function buscarCep() {

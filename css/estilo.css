@@ -11,6 +11,14 @@ https://desenvolvimentoparaweb.com/css/bem/
     font-family: 'Courier New', Courier, monospace;
 }
 
+.formulario__fieldset__input__descricao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
 /* Definições gerais (pseudo-elementos), equivalem a constantes*/
 :root {
     --fonte-titulo: "Lato", sans-serif;
