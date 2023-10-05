@@ -1,1 +1,121 @@
-<p>produto-listagem works!</p>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- https://getbootstrap.com/docs/4.0/components/card/ -->
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          <h5>Filtros</h5>
+        </div>
+        <div class="card-body card-info">
+          <!-- FONTE: https://getbootstrap.com/docs/4.0/components/forms/ -->
+          <form>
+            <pre>Seletor em JSON ("canteiro de obras - comentar/apagar"): {{seletor | json}}</pre>
+              <!-- TODO botar nome e nomeFabricante em uma linha única (cada item ocupando 6 espaços) -->
+              <div class="row">
+                <div class="form-group">
+                  <label for="nome">Nome: </label>
+                  <input class="form-control" name="nome" [(ngModel)]="seletor.nome">
+                </div>
+                <div class="form-group">
+                  <label for="fabricante">Fabricante:</label>
+                  <input class="form-control" name="fabricante"  [(ngModel)]="seletor.fabricante">
+                </div>
+
+              </div>
+              <!-- <div class="form-group">
+                <label for="nome">Nome: </label>
+                <input class="form-control" name="nome" [(ngModel)]="seletor.nome">
+              </div>
+              <div class="form-group">
+                <label for="fabricante">Fabricante:</label>
+                <input class="form-control" name="fabricante"  [(ngModel)]="seletor.fabricante">
+              </div> -->
+
+              <div class="form-group">
+                <label for= "cnpjFabricante">Cnpj: </label>
+                <input class="form-control" name="cnpjFabricante" [(ngModel)]="seletor.cnpjFabricante">
+              </div>
+
+              <div class="form-group">
+                <label for= "valorMinimo">Valor Minimo: </label>
+                <input class="form-control" name="valorMinimo" [(ngModel)]="seletor.valorMinimo">
+              </div>
+
+              <div class="form-group">
+                <label for= "valorMaximo">Valor Maximo: </label>
+                <input class="form-control" name="valorMaximo" [(ngModel)]="seletor.valorMaximo">
+              </div>
+
+              <div class="form-group">
+                <label for= "pesoMinimo">Peso Minimo: </label>
+                <input class="form-control" name="pesoMinimo" [(ngModel)]="seletor.pesoMinimo">
+              </div>
+
+              <div class="form-group">
+                <label for= "pesoMaximo">Peso Maximo: </label>
+                <input class="form-control" name="pesoMaximo" [(ngModel)]="seletor.pesoMaximo">
+              </div>
+
+              <div class="form-group">
+                <label for= "dataCadastroInicial">Data Cadastro Inicial: </label>
+                <input class="form-control" name="dataCadastroInicial" [(ngModel)]="seletor.dataCadastroInicial">
+              </div>
+
+              <div class="form-group">
+                <label for= "dataCadastroFinal">Data Cadastro Final: </label>
+                <input class="form-control" name="dataCadastroFinal"  [(ngModel)]="seletor.dataCadastroFinal">
+              </div>
+
+
+              <br>
+              <div class="form-group">
+                <button type="submit"   class="form-control btn btn-primary" ngClick="pesquisar()">Pesquisar</button>
+              </div>
+
+              <div class="form-group">
+                <button type="submit"   class="form-control btn btn-danger" ngClick="limpar()">Limpar</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header bg-warning text-black">
+          <h5>Lista de Produtos</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <div class="table-responsive">
+                <table class="table table-responsive">
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Nome</th>
+                      <th>Ações</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let p of produtos">
+                      <td>{{ p.id }}</td>
+                      <td>{{ p.nome }}</td>
+                      <td>
+                        <button ngbTooltip="Editar"
+                                class="btn btn-xs btn-info"
+                                (click)="editar(p.id)">Editar
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
