@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {path: "", redirectTo: "produtos/lista", pathMatch: "full"},
+  {path: "cadastro", redirectTo: "produtos/cadastro", pathMatch: "full"},
   {
     path: 'produtos', //Isso é o que vai estar na URL
     loadChildren:() => import('./produtos/produtos.module').then(m => m.ProdutosModule)

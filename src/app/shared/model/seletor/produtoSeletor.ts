@@ -8,6 +8,4 @@ export class ProdutoSeletor {
   pesoMaximo: number;
   dataCadastroInicial: Date;
   dataCadastroFinal: Date;
-
-
 }
