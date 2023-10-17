@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/Router';
 import { Produto } from 'src/app/shared/model/produto';
 import { ProdutoService } from 'src/app/shared/service/produto.service';
 import { Fabricante } from './../../shared/model/fabricante';
 import { FabricanteService } from './../../shared/service/fabricante.service';
 import Swal from 'sweetalert2';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produto-detalhe',
@@ -18,7 +18,7 @@ export class ProdutoDetalheComponent implements OnInit {
 
   constructor(private produtoService: ProdutoService,
               private fabricanteService: FabricanteService,
-              private Router: Router) { }
+              private router: Router) { }
 
   ngOnInit(): void {
     this.fabricanteService.listarTodos().subscribe(

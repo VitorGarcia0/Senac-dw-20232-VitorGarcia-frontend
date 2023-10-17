@@ -12,7 +12,7 @@
                         [ngModelOptions]="{standalone: true}"
                         aria-label="Selecione um fabricante"
                         [compareWith]="compareById"
-                        [(ngModel)]="produto.fabricanteDoProduto">
+                        [(ngModel)]="produto.fabricante">
                     <option *ngFor="let fabricante of fabricantes"
                         [ngValue]="fabricante">{{fabricante.nome}}</option>
                 </select>

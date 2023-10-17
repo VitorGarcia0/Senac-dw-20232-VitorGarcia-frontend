@@ -20,6 +20,7 @@ export class ProdutoListagemComponent implements OnInit {
     this.buscarProdutos();
   }
 
+
   buscarProdutos() {
     this.produtoService.listarTodos().subscribe(
       (resultado) => {
@@ -47,7 +48,7 @@ export class ProdutoListagemComponent implements OnInit {
     );
   }
 
-limpar() {
-  this.seletor = new ProdutoSeletor();
-}
+  limpar() {
+    this.seletor = new ProdutoSeletor();
+  }
 }

@@ -13,8 +13,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
-
+    HttpClientModule, //importar o módulo de requisições HTTP
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
