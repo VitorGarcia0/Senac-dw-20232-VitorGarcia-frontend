@@ -1,3 +1,5 @@
+import { Produto } from "./produto";
+
 export class Fabricante {
   id: number;
   nome: string;
@@ -6,6 +8,7 @@ export class Fabricante {
   ep: string;
   cidade: string;
   uf: string;
- // lista de produtos
+  produto: Array<Produto>;
+
 
 }

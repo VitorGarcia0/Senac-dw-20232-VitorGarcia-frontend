@@ -96,7 +96,7 @@
               </div>
             <div class="form-group col-md-3">
               <button type="submit"class="form-control btn btn-primary"
-                (click)="pesquisar()" >  Pesquisar</button>
+                (click)="pesquisar()" >Pesquisar</button>
 
             </div>
 
@@ -140,13 +140,13 @@
                     <td class="text-center">{{p.valor | currency: 'BRL'}}</td>
                     <td class="text-center">{{p.dataCadastro | date: 'dd/MM/yyyy'}}</td>
                     <td class="text-center">
-                      <!-- <button class="btn btn-xs btn-secondary mr-12"
+                      <button class="btn btn-xs btn-secondary mr-12"
                               (click)="editar(p.id)">Editar
                       </button>
-                      &nbsp; -->
-                      <!-- <button class="btn btn-xs btn-danger"
+                      &nbsp;
+                      <button class="btn btn-xs btn-danger"
                                (click)="excluir(p.id)">Excluir
-                      </button> -->
+                      </button>
                     </td>
                   </tr>
                 </tbody>
