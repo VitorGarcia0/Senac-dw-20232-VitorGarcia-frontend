@@ -48,7 +48,7 @@ export class ProdutoDetalheComponent implements OnInit {
       erro => {
         Swal.fire("Erro", "Erro ao buscar os fabricantes: " + erro, 'error');
       }
-    )
+    );
   }
 
   salvar(form: NgForm){

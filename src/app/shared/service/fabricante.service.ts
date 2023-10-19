@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class FabricanteService {
 
-  private readonly API = 'http://localhost:8080/api/fabricantes';
+  private readonly API = 'http://localhost:8080/api/fabricante';
 
   constructor(private httpClient: HttpClient) {}
 
