@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Produto } from 'src/app/shared/model/produto';
 import { ProdutoService } from 'src/app/shared/service/produto.service';
 import { Fabricante } from './../../shared/model/fabricante';
 import { FabricanteService } from './../../shared/service/fabricante.service';
 import Swal from 'sweetalert2';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-produto-detalhe',
@@ -13,14 +14,33 @@ import { Router } from '@angular/router';
 })
 export class ProdutoDetalheComponent implements OnInit {
 
+  public idProduto: number;
   public produto: Produto = new Produto();
   public fabricantes: Fabricante[] = [];
+  public dataMinima: string;
+  public dataMaxima: string;
+
+  @ViewChild('ngForm')
+  public ngForm: NgForm;
+
 
   constructor(private produtoService: ProdutoService,
               private fabricanteService: FabricanteService,
-              private router: Router) { }
+              private router: Router,
+              private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.dataMinima = "2023-10-15";
+    this.dataMaxima = "2023-12-30";
+
+    this.route.params.subscribe(params => {
+      this.idProduto = params['id'];    //'id' é o nome do parâmetro definido na rota
+
+      if(this.idProduto) {
+        this.buscarProduto();
+      }
+    });
+
     this.fabricanteService.listarTodos().subscribe(
       resultado => {
         this.fabricantes = resultado;
@@ -31,7 +51,33 @@ export class ProdutoDetalheComponent implements OnInit {
     )
   }
 
-  salvar(){
+  salvar(form: NgForm){
+    if(form.invalid){
+      Swal.fire("Atenção!", "Revise, por gentileza", 'warning');
+      return;
+    }
+    if(this.idProduto){
+      this.atualizarProduto()
+    }else{
+      this.inserirProduto();
+    }
+  }
+
+  atualizarProduto(){
+    //é EDIÇÃO
+    this.produtoService.atualizar(this.produto).subscribe(
+      sucesso => {
+        Swal.fire("Sucesso", "Produto atualizado!", 'success');
+        this.produto = new Produto();
+      },
+      erro => {
+        Swal.fire("Erro", "Erro ao atualizar o produto: " + erro, 'error');
+      }
+    );
+  }
+
+  inserirProduto(){
+    //é CADASTRO
     this.produtoService.salvar(this.produto).subscribe(
       sucesso => {
         //usar um componente de alertas (importar no app.module.ts)
@@ -46,8 +92,20 @@ export class ProdutoDetalheComponent implements OnInit {
     );
   }
 
+  buscarProduto(){
+    this.produtoService.pesquisarPorId(this.idProduto).subscribe(
+      resultado => {
+        this.produto = resultado;
+      },
+      erro => {
+        Swal.fire("Erro", "Erro ao buscar o produto com id ("
+                      + this.idProduto + ") : " + erro, 'error');
+      }
+    );
+  }
+
   voltar(){
-    this.router.navigate(['app/produtos/listagem/']);
+    this.router.navigate(['/']);
   }
 
   public compareById(r1: any, r2: any): boolean {
