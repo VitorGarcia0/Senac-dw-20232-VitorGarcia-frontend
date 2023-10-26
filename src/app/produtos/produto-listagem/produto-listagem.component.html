@@ -14,99 +14,63 @@
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="nome">Nome: </label>
-                <input
-                  class="form-control"
-                  name="nome"
-                  [(ngModel)]="seletor.nome"
-                />
+                <input class="form-control" name="nome" [(ngModel)]="seletor.nome" />
               </div>
               <div class="form-group col-md-6">
                 <label for="fabricante">Fabricante:</label>
-                <input
-                  class="form-control"
-                  name="fabricante"
-                  [(ngModel)]="seletor.fabricante"
-                />
+                <input class="form-control" name="fabricante" [(ngModel)]="seletor.fabricante" />
               </div>
             </div>
 
             <div class="row">
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-3">
                 <label for="valorMinimo">Valor Mínimo: </label>
-                <input
-                  class="form-control"
-                  name="valorMinimo"
-                  [(ngModel)]="seletor.valorMinimo"
-                />
+                <input class="form-control" name="valorMinimo" [(ngModel)]="seletor.valorMinimo" />
               </div>
 
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-3">
                 <label for="valorMaximo">Valor Máximo: </label>
-                <input
-                  class="form-control"
-                  name="valorMaximo"
-                  [(ngModel)]="seletor.valorMaximo"
-                />
+                <input class="form-control" name="valorMaximo" [(ngModel)]="seletor.valorMaximo" />
               </div>
-            </div>
 
-            <div class="row">
-              <div class="form-group col-md-6">
+
+              <div class="form-group col-md-3">
                 <label for="pesoMinimo">Peso Mínimo: </label>
-                <input
-                  class="form-control"
-                  name="pesoMinimo"
-                  [(ngModel)]="seletor.pesoMinimo"
-                />
+                <input class="form-control" name="pesoMinimo" [(ngModel)]="seletor.pesoMinimo" />
               </div>
 
-              <div class="form-group col-md-6">
+              <div class="form-group col-md-3">
                 <label for="pesoMaximo">Peso Máximo: </label>
-                <input
-                  class="form-control"
-                  name="pesoMaximo"
-                  [(ngModel)]="seletor.pesoMaximo"
-                />
+                <input class="form-control" name="pesoMaximo" [(ngModel)]="seletor.pesoMaximo" />
               </div>
             </div>
 
             <div class="row">
               <div class="form-group col-md-6">
                 <label for="dataCadastroInicial">Data Cadastro Inicial: </label>
-                <input
-                  class="form-control"
-                  name="dataCadastroInicial"
-                  [(ngModel)]="seletor.dataCadastroInicial"
-                />
+                <input class="form-control" type="date" name="dataCadastroInicial" />
               </div>
 
               <div class="form-group col-md-6">
                 <label for="dataCadastroFinal">Data Cadastro Final: </label>
-                <input
-                  class="form-control"
-                  name="dataCadastroFinal"
-                  [(ngModel)]="seletor.dataCadastroFinal"
-                />
+                <input class="form-control" type="date" name="dataCadastroFinal"
+                  [(ngModel)]="seletor.dataCadastroFinal" />
               </div>
             </div>
 
             <br />
-           <div class="row">
+            <div class="row">
               <div class="form-group col-md-6">
               </div>
-            <div class="form-group col-md-3">
-              <button type="submit"class="form-control btn btn-primary"
-                (click)="pesquisar()" >Pesquisar</button>
+              <div class="form-group col-md-3">
+                <button type="submit" class="form-control btn btn-primary" (click)="pesquisar()">Pesquisar</button>
 
-            </div>
+              </div>
 
-            <div class="form-group col-md-3">
-              <button
-                type="submit"
-                class="form-control btn btn-danger"
-                (click)="limpar()">Limpar </button>
+              <div class="form-group col-md-3">
+                <button type="submit" class="form-control btn btn-danger" (click)="limpar()">Limpar </button>
+              </div>
             </div>
-          </div>
           </form>
         </div>
       </div>
@@ -140,12 +104,10 @@
                     <td class="text-center">{{p.valor | currency: 'BRL'}}</td>
                     <td class="text-center">{{p.dataCadastro | date: 'dd/MM/yyyy'}}</td>
                     <td class="text-center">
-                      <button class="btn btn-xs btn-secondary mr-12"
-                              (click)="editar(p.id)">Editar
+                      <button class="btn btn-xs btn-secondary mr-12" (click)="editar(p.id)">Editar
                       </button>
                       &nbsp;
-                      <button class="btn btn-xs btn-danger"
-                               (click)="excluir(p.id)">Excluir
+                      <button class="btn btn-xs btn-danger" (click)="excluir(p.id)">Excluir
                       </button>
                     </td>
                   </tr>
